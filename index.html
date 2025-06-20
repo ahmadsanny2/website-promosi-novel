@@ -2,18 +2,15 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- Title -->
-  <title>Dua Novel, Dua Dunia</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Risyad Farizi</title>
 
-  <!-- TailwindCSS -->
-  <link rel="stylesheet" href="./src/css/output.css" />
-
-  <!-- Font Awesome -->
+  <!-- TailwindCSS, FontAwesome, Google Fonts, dan AOS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
   <script src="https://kit.fontawesome.com/ecde4d1cd4.js" crossorigin="anonymous"></script>
-
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
 
   <!-- CSS -->
   <style>
@@ -21,82 +18,115 @@
       scroll-behavior: smooth;
     }
 
-    *,
-    html {}
-
     body {
       overflow-x: hidden;
+    }
+
+    .bg-image {
+      background-image: url('<?php echo get_template_directory_uri(); ?>/assets/images/4.png');
+      background-repeat: no-repeat;
+    }
+
+    #waktu {
+      font-family: Orbitron;
+    }
+
+    #tentang-novel,
+    #cuplikan,
+    #tentang-penulis,
+    #tentang-novel {
+      scroll-margin-top: 20px;
     }
   </style>
 </head>
 
-<body class="bg-white text-gray-900 font-sans">
+<body>
   <!-- Navbar -->
-  <header class="bg-white w-full fixed top-0 shadow-md z-10">
-    <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
-      <h1 class="font-bold">RisyadFarizi</h1>
+  <header class="bg-white w-full fixed top-0 shadow-md z-10 px-5 lg:px-10 py-5">
+    <div class="container mx-auto lg:flex items-center justify-between">
+      <div class="flex justify-between">
+        <h1 class="font-bold"><a href="">RisyadFarizi</a></h1>
 
-      <!-- Desktop Nav -->
-      <nav class="space-x-6 hidden md:flex">
-        <a href="#" class="text-gray-700 hover:text-blue-500">Home</a>
-        <a href="#" class="text-gray-700 hover:text-blue-500">Tentang Novel</a>
-        <a href="#" class="text-gray-700 hover:text-blue-500">Cuplikan</a>
-        <a href="#" class="text-gray-700 hover:text-blue-500">Penulis</a>
-        <a href="#" class="text-gray-700 hover:text-blue-500">Download</a>
-        <a href="#" class="text-gray-700 hover:text-blue-500">Rilis</a>
-        <a href="#" class="text-gray-700 hover:text-blue-500">FAQ</a>
-        <a href="#" class="text-gray-700 hover:text-blue-500">Testimoni</a>
-        <a href="#" class="text-gray-700 hover:text-blue-500">Kontak</a>
-      </nav>
-
-      <!-- Hamburger Button (Mobile) -->
-      <button id="mobile-menu-toggle" class="md:hidden text-gray-700 focus:outline-none cursor-pointer">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
-          stroke-linecap="round" stroke-linejoin="round">
-          <path d="M4 6h16M4 12h16M4 18h16" />
-        </svg>
-      </button>
-    </div>
-
-    <!-- Mobile Nav Menu -->
-    <div id="mobile-menu" class="hidden px-4 pb-4 md:hidden">
-      <a href="#" class="block py-2 text-gray-700 hover:text-blue-500">Home</a>
-      <a href="#" class="block py-2 text-gray-700 hover:text-blue-500">Tentang Novel</a>
-      <a href="#" class="block py-2 text-gray-700 hover:text-blue-500">Testimoni</a>
-      <a href="#" class="block py-2 text-gray-700 hover:text-blue-500">Kontak</a>
+        <!-- Hamburger Button (Mobile) -->
+        <button id="mobile-menu-toggle" class="md:hidden text-gray-700 focus:outline-none cursor-pointer">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+      <ul class="flex gap-5">
+        <li class="">
+          <a href="" class="">Beranda</a>
+        </li>
+        <li class="">
+          <a href="" class="">Tentang Novel</a>
+        </li>
+        <li class="">
+          <a href="" class="">Cuplikan</a>
+        </li>
+        <li class="">
+          <a href="" class="">Penulis</a>
+        </li>
+        <li class="">
+          <a href="" class="">Beli Novel</a>
+        </li>
+      </ul>
     </div>
   </header>
 
   <!-- Hero Section -->
-  <section class="py-44 bg-gray-50">
-    <div class="max-w-4xl mx-auto text-center px-6">
-      <h1 class="text-4xl font-bold mb-4" data-aos="fade-up">
-        Dua Novel, Dua Dunia. Satu Pengalaman Membaca yang Tak Terlupakan.
-      </h1>
-      <p class="text-lg text-gray-600 mb-6" data-aos="fade-up">
-        Selami kisah cinta penuh konspirasi dalam
-        <strong>Ketika Bom Menyulut Cinta</strong> dan horor misterius dalam
-        <strong>Night Stalkers</strong>.
-      </p>
-      <button class="mt-5">
-        <a href="#novel"
-          class="border-2 border-blue-600 hover:bg-blue-600 hover:text-white hover:bg-blue-700 p-2  rounded-full">
-          <i class="fa-solid fa-arrow-down"></i>
-        </a>
-      </button>
+  <section class="relative overflow-hidden py-20" id="beranda">
+    <!-- Background SVG -->
+    <div class="absolute inset-0 -z-10">
+      <svg class="w-full h-full opacity-10" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"
+        viewBox="0 0 800 600">
+        <g fill="#3b82f6">
+          <circle cx="100" cy="100" r="80" />
+          <circle cx="700" cy="100" r="60" />
+          <circle cx="400" cy="500" r="90" />
+          <circle cx="200" cy="400" r="40" />
+        </g>
+      </svg>
+    </div>
 
+    <div class="container mx-auto px-10 grid md:grid-cols-2 gap-12 items-center">
+      <!-- Text Content -->
+      <div>
+        <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+          Dua Novel, Dua Dunia.<br>
+          <span class="text-blue-600">Satu Pengalaman Membaca Tak Terlupakan</span>
+        </h1>
+        <p class="text-lg text-gray-700 mb-6">Temukan ketegangan dan romansa dalam <strong>Ketika Bom Menyulut
+            Cinta</strong>, dan selami dunia gelap penuh misteri di <strong>Night Stalkers</strong>.</p>
+        <div class="flex flex-wrap gap-4">
+          <a href="#novel1"
+            class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-5 rounded shadow-md transition">Baca
+            Ketika Bom Menyulut Cinta</a>
+          <a href="#novel2"
+            class="border border-blue-600 text-blue-600 hover:bg-blue-50 font-semibold py-2 px-5 rounded shadow-sm transition">Baca
+            Night Stalkers</a>
+        </div>
+      </div>
+
+      <!-- Cover Images -->
+      <div class="flex justify-center gap-8">
+        <img src="assets/images/1.png" alt="Ketika Bom Menyulut Cinta"
+          class="w-40 md:w-48 lg:w-56 rounded-xl shadow-lg">
+        <img src="assets/images/2.png" alt="Night Stalkers" class="w-40 md:w-48 lg:w-56 rounded-xl shadow-lg">
+      </div>
     </div>
   </section>
 
   <!-- Tentang Novel -->
-  <section id="novel" class="py-16">
-    <div class="max-w-7xl mx-auto px-6 lg:px-20">
+  <section class="p-5 lg:p-10" id="tentang-novel">
+    <div class="container mx-auto">
       <h2 class="text-3xl font-semibold mb-10 text-center">Tentang Novel</h2>
       <div class="grid md:grid-cols-2 items-center gap-5">
-        <div class="shadow-md p-5 text-center my-5 rounded" data-aos="fade-up-right">
-          <img src="./assets/images/Ketika Bom Menyulut Cinta.png" alt="" class="w-72 justify-self-center rounded-md"
+        <div class="shadow-md p-5 text-right lg:text-center my-5 rounded" data-aos="fade-up-right">
+          <img src="assets/images/1.png" alt="" class="w-72 justify-self-center rounded-md"
             id="ketikaBomMenyulutCinta" />
-          <h1 class="text-4xl font-semibold mb-2">
+          <h1 class="text-4xl font-semibold mb-2 text-center">
             Ketika Bom Menyulut Cinta
           </h1>
           <ul class="text-left">
@@ -117,15 +147,15 @@
               dan keberanian diuji dalam sebuah permainan hidup dan mati.
             </li>
           </ul>
-          <button class="bg-blue-600 hover:bg-blue-700 text-white p-2 rounded">
-            <a href="" class="">Baca Selengkapnya</a>
+          <button class="bg-blue-600 hover:bg-blue-700 text-white p-2 mt-5 lg:mt-0 rounded">
+            <a href="https://gwp.id/story/143842/ketika-bom-menyulut-cinta" class="">Baca Selengkapnya</a>
           </button>
         </div>
 
-        <div class="shadow-md p-5 text-center my-5 rounded" data-aos="fade-up-left">
-          <img src="./assets/images/Night Stalker.png" alt="" class="w-72 justify-self-center rounded-md"
+        <div class="shadow-md p-5 text-right lg:text-center my-5 rounded" data-aos="fade-up-left">
+          <img src="assets/images/2.png" alt="" class="w-72 justify-self-center rounded-md"
             id="ketikaBomMenyulutCinta" />
-          <h1 class="text-4xl font-semibold mb-2">Night Stalkers</h1>
+          <h1 class="text-4xl font-semibold mb-2 text-center">Night Stalkers</h1>
           <ul class="text-left">
             <li class="">
               <span class="font-semibold">Genre:</span>
@@ -145,8 +175,9 @@
               yang ingin kembali.
             </li>
           </ul>
-          <button class="bg-blue-600 hover:bg-blue-700 text-white p-2 rounded">
-            <a href="" class="">Baca Selengkapnya</a>
+          <button class="bg-blue-600 hover:bg-blue-700 text-white p-2 mt-5 lg:mt-0 rounded">
+            <a href="https://gwp.id/story/143843/night-stalkers
+            " class="">Baca Selengkapnya</a>
           </button>
         </div>
       </div>
@@ -154,88 +185,110 @@
   </section>
 
   <!-- Cuplikan Bab Pertama -->
-  <section class="py-16 bg-gray-50">
-    <div class="max-w-6xl mx-auto px-6">
-      <h2 class="text-3xl font-semibold mb-6 text-center">CUPLIKAN BAB PERTAMA</h2>
+  <section class="bg-gray-50 p-5 lg:p-10" id="cuplikan">
+    <div class="container mx-auto">
+      <h2 class="text-3xl font-semibold mb-6 text-center">
+        CUPLIKAN BAB PERTAMA
+      </h2>
       <div class="grid md:grid-cols-2 gap-8">
+
         <!-- Novel 1 -->
         <div class="bg-white shadow p-6 rounded">
           <h3 class="text-xl font-bold mb-2">Ketika Bom Menyulut Cinta</h3>
           <p class="text-sm text-gray-700 line-clamp-6">
-            Dentuman itu mengguncang langit Jakarta pagi itu. Maya tersentak dari kursinya, serpihan kaca melesat ke
-            udara...
+            Dentuman itu mengguncang langit Jakarta pagi itu. Maya tersentak
+            dari kursinya, serpihan kaca melesat ke udara...
           </p>
-          <a href="#" class="text-blue-600 text-sm mt-2 inline-block">Baca Cuplikan Lengkap →</a>
+          <a href="https://gwp.id/chapter/143842/271790/bab-1-hari-yang-penuh-luka?q=read
+          " class="text-blue-600 text-sm mt-2 inline-block">Baca Cuplikan Lengkap →</a>
         </div>
+
         <!-- Novel 2 -->
         <div class="bg-white shadow p-6 rounded">
           <h3 class="text-xl font-bold mb-2">Night Stalkers</h3>
           <p class="text-sm text-gray-700 line-clamp-6">
-            Malam itu, angin menggerakkan tirai dengan cara yang tidak wajar. Askara tahu, ini bukan hanya mimpi buruk
-            biasa...
+            Malam itu, angin menggerakkan tirai dengan cara yang tidak wajar.
+            Askara tahu, ini bukan hanya mimpi buruk biasa...
           </p>
-          <a href="#" class="text-blue-600 text-sm mt-2 inline-block">Baca Cuplikan Lengkap →</a>
+          <a href="https://gwp.id/chapter/143843/271825/episode-1-dua-korban?q=read
+          " class="text-blue-600 text-sm mt-2 inline-block">Baca Cuplikan Lengkap →</a>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Profil Penulis -->
-  <section class="py-16 bg-white">
-    <div class="max-w-4xl mx-auto text-center px-6">
+  <section class="bg-white p-5 lg:p-10" id="tentang-penulis">
+    <div class="container mx-auto text-center">
       <h2 class="text-3xl font-semibold mb-4">Tentang Penulis</h2>
-      <img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e" alt="Author"
-        class="w-32 h-32 rounded-full mx-auto mb-4" />
-      <p class="text-gray-700 text-sm">
-        Risyad Farizi adalah penulis muda yang menggabungkan elemen cinta dan misteri dalam karya-karyanya. Terinspirasi
-        dari kejadian nyata dan dunia imajinasi, ia menciptakan kisah yang menggugah emosi dan memacu adrenalin.
+
+      <img src="assets/images/3.jpg" alt="Author" class="w-40 h-40 rounded-full mx-auto mb-4" />
+      <p class="text-gray-700 text-sm text-justify">
+        Risyad Farizi lahir di Bandung, 1995. Sejak kecil, ia memiliki
+        ketertarikan terhadap dunia sastra dan menulis cerita-cerita pendek
+        yang menggugah imajinasi. Dengan latar belakang yang kuat dalam dunia
+        literasi,
+        <span class="" id="hideButton">
+          <button id="readMoreBtn" onclick="showFullText()" class="text-blue-500 hover:underline inline">
+            Baca Selengkapnya
+          </button>
+        </span>
+        <span id="fullText" class="hidden">
+          ia terus mengembangkan karyanya hingga akhirnya menulis novel Ketika
+          Bom Menyulut Cinta. Novel ini terinspirasi dari perjalanan pribadi
+          penulis saat mengeksplorasi kota Palangka Raya bersama saudaranya.
+          Selama perjalanan tersebut, penulis menemukan berbagai keunikan dan
+          daya tarik kota yang belum banyak diangkat dalam karya fiksi.
+          Keindahan alam, suasana kota, serta berbagai tempat menarik yang
+          dikunjungi menjadi inspirasi dalam menciptakan adegan-adegan
+          menegangkan di dalam novel ini. Penulis berkomitmen untuk terus
+          mengembangkan cerita dengan memanfaatkan latar dari berbagai kota
+          yang pernah dikunjungi. Tujuannya adalah menghadirkan sebuah cerita
+          yang tidak hanya berfokus pada kota-kota besar seperti Jakarta,
+          Bandung, atau Yogyakarta, tetapi juga mengangkat kota-kota lain yang
+          memiliki pesona dan daya tarik tersendiri. Dengan cara ini, pembaca
+          dapat merasakan pengalaman baru dan lebih mengenal keberagaman
+          kota-kota di Indonesia yang sama indahnya
+        </span>
       </p>
     </div>
   </section>
 
-  <!-- CTA Beli / Unduh -->
-  <section class="py-16 bg-blue-600 text-white">
-    <div class="max-w-6xl mx-auto px-6 text-center">
-      <h2 class="text-3xl font-semibold mb-6">Dapatkan Novelnya Sekarang!</h2>
-      <div class="flex flex-col md:flex-row justify-center gap-6">
-        <a href="#" class="bg-white text-blue-600 font-bold py-3 px-6 rounded hover:bg-gray-100">📥 Download eBook</a>
-        <a href="#" class="bg-white text-blue-600 font-bold py-3 px-6 rounded hover:bg-gray-100">🛒 Beli Versi Cetak</a>
-      </div>
-    </div>
-  </section>
-
   <!-- Countdown Rilis -->
-  <section class="py-16 bg-gray-100 text-center">
-    <h2 class="text-3xl font-semibold mb-4">Hitung Mundur Rilis!</h2>
-    <div id="countdown" class="text-4xl font-bold text-blue-700"></div>
-  </section>
+  <section class="bg-gray-100 text-center p-5 lg:p-10" id="rilis">
+    <div class="container mx-auto bg-white p-2 rounded">
 
-  <!-- FAQ -->
-  <section class="py-16">
-    <div class="max-w-4xl mx-auto px-6">
-      <h2 class="text-3xl font-semibold text-center mb-8">Pertanyaan Umum</h2>
-      <div class="space-y-4">
-        <div>
-          <h4 class="font-semibold">Apakah novel ini cocok untuk pembaca remaja?</h4>
-          <p class="text-gray-700 text-sm">Ya, kedua novel ini ditujukan untuk pembaca usia 15 tahun ke atas dengan tema
-            yang tetap relevan dan aman.</p>
+      <div class="bg-blue-600 p-10 shadow-md rounded" id="waktu">
+        <h2 class="text-3xl font-semibold text-white">Hitung Mundur Rilis!</h2>
+        <div class="flex justify-center items-center gap-2 mt-5">
+
+          <div class="bg-white border border-slate-300 p-2 rounded">
+            <span class="text-2xl" id="days">0</span>
+            <p class="">Hari</p>
+          </div>
+          <div class="text-3xl text-white">
+            :
+          </div>
+          <div class="bg-white border border-slate-300 p-2 rounded">
+            <span class="text-2xl" id="hours">0</span>
+            <p class="">Jam</p>
+          </div>
+          <div class="text-3xl text-white">
+            :
+          </div>
+          <div class="bg-white border border-slate-300 p-2 rounded">
+            <span class="text-2xl" id="minutes">0</span>
+            <p class="">Menit</p>
+          </div>
+
         </div>
-        <div>
-          <h4 class="font-semibold">Apakah tersedia versi cetak dan digital?</h4>
-          <p class="text-gray-700 text-sm">Tersedia dalam dua format: eBook (PDF/EPUB) dan cetak fisik yang bisa dipesan
-            online.</p>
-        </div>
-        <div>
-          <h4 class="font-semibold">Apakah akan ada kelanjutan ceritanya?</h4>
-          <p class="text-gray-700 text-sm">Ya, penulis sedang mengembangkan sekuel dari kedua novel ini. Nantikan
-            infonya!</p>
-        </div>
+        <div id="countdown" class="text-4xl font-bold text-white mt-5"></div>
       </div>
     </div>
   </section>
 
   <!-- Testimoni -->
-  <section class="py-16 bg-gray-100">
+  <!-- <section class="py-16 bg-gray-100">
     <div class="max-w-7xl mx-auto px-6">
       <h2 class="text-3xl font-semibold mb-10 text-center">
         Testimoni Pembaca
@@ -275,36 +328,25 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
 
   <!-- Kontak -->
-  <section class="py-16">
-    <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-10">
-      <div>
-        <img src="https://images.unsplash.com/photo-1588694926280-3ae414d06ccb" alt="Ketika Bom"
-          class="rounded-lg mb-4" />
-        <h3 class="text-xl font-semibold mb-2">Ketika Bom Menyulut Cinta</h3>
-        <p>
-          Email:
-          <a href="mailto:ketikabomcinta@example.com" class="text-blue-600">ketikabomcinta@example.com</a>
-        </p>
-      </div>
-      <div>
-        <img src="https://images.unsplash.com/photo-1571979195097-59d223315d89" alt="Night Stalkers"
-          class="rounded-lg mb-4" />
-        <h3 class="text-xl font-semibold mb-2">Night Stalkers</h3>
-        <p>
-          Email:
-          <a href="mailto:nightstalkers@example.com" class="text-blue-600">nightstalkers@example.com</a>
-        </p>
+  <section class="p-5 lg:p-10" id="kontak">
+    <div class="container mx-auto">
+      <h2 class="text-3xl font-semibold mb-4">Contact</h2>
+      <div class="flex items-center text-xl gap-1">
+        <i class="fa fa-whatsapp"></i>
+        <p class="">Whatsapp : 0821-2766-2477</p>
       </div>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="bg-gray-800 text-white py-8">
-    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center">
-      <p>© 2025 RisyadFarizi</p>
+  <footer class="bg-gray-800 text-white p-5 lg:p-10">
+    <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">
+      <p>
+        © RisyadFarizi
+      </p>
       <div class="space-x-4 mt-4 md:mt-0">
         <a href="#" class="hover:underline">Privacy Policy</a>
         <a href="#" class="hover:underline">Terms of Use</a>
@@ -313,33 +355,30 @@
     </div>
   </footer>
 
-  <!-- Toggle Script -->
-  <script>
-    const toggleBtn = document.getElementById("mobile-menu-toggle");
-    const mobileMenu = document.getElementById("mobile-menu");
 
-    toggleBtn.addEventListener("click", () => {
-      mobileMenu.classList.toggle("hidden");
-    });
+
+  <script>
+    function showFullText() {
+      const fullText = document.getElementById("fullText");
+      const btn = document.getElementById("hideButton");
+
+      fullText.classList.remove("hidden");
+      btn.classList.add("hidden");
+    }
   </script>
 
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
     AOS.init();
   </script>
-
   <script>
-    const toggleBtn = document.getElementById("mobile-menu-toggle");
-    const mobileMenu = document.getElementById("mobile-menu");
-    toggleBtn.addEventListener("click", () => {
-      mobileMenu.classList.toggle("hidden");
-    });
-  </script>
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init();
-    const releaseDate = new Date("2025-06-01T00:00:00").getTime();
+    const releaseDate = new Date("2025-05-31T00:00:00").getTime();
     const countdownElement = document.getElementById("countdown");
+    const timeDays = document.getElementById("days")
+    const timeHours = document.getElementById("hours")
+    const timeMinutes = document.getElementById("minutes")
+    const timeSeconds = document.getElementById("seconds")
+
     const countdownInterval = setInterval(() => {
       const now = new Date().getTime();
       const distance = releaseDate - now;
@@ -349,11 +388,27 @@
         return;
       }
       const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const hours = Math.floor(
+        (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+      );
       const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
       const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-      countdownElement.innerText = `${days}h ${hours}j ${minutes}m ${seconds}s`;
+
+      timeDays.innerText = `${days}`
+      timeHours.innerText = `${hours}`
+      timeMinutes.innerText = `${minutes}`
+      timeSeconds.innerText = `${seconds}`
     }, 1000);
+  </script>
+
+  <!-- Toggle Script -->
+  <script>
+    const toggleBtn = document.getElementById("mobile-menu-toggle");
+    const mobileMenu = document.getElementById("mobile-menu");
+
+    toggleBtn.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+    });
   </script>
 </body>
 
